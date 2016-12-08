@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gitlab
+  namespace: gitlab
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: gitlab
+        app: gitlab
+    spec:
+      containers:
+      - name: gitlab
+        image: gitlab/gitlab-ce:latest 
+        imagePullPolicy: Always
+        env:
+         - name: GITLAB_OMNIBUS_CONFIG
+           valueFrom:
+             configMapKeyRef:
+               name: gitlab-configmap
+               key: gitlab_omnibus_config
+        ports:
+          - name: http
+            containerPort: 80
+          - name: ssh
+            containerPort: 22
+        livenessProbe:
+          httpGet:
+            path: /users/sign_in
+            port: 80
+          initialDelaySeconds: 180
+          timeoutSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /users/sign_in
+            port: 80
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
+      volumes:
+        - name: data
+          emptyDir: {}
