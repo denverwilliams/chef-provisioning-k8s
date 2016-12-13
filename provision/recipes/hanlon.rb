@@ -53,7 +53,6 @@ ruby_block "Wait for #{node_count} node to have CoreOS installed..." do
     node.run_state['logs'] = {}
     loop do
       if Hanlon::Api::ActiveModel.list.length >= node_count
-        Chef::Log.warn("Hanlon Logs for Install Process")
         Hanlon::Api::ActiveModel.list.each do |active_model|
           am = Hanlon::Api::ActiveModel.find(active_model)
           next unless am.node
@@ -69,6 +68,7 @@ ruby_block "Wait for #{node_count} node to have CoreOS installed..." do
         uniq_last_log_states = node.run_state['logs'].values.map{|v|v.last["state"]}.uniq
         next unless uniq_last_log_states == ["complete_no_broker"]
         Chef::Log.warn("All #{node_count} nodes are avaliable")
+        Chef::Log.warn("Hanlon Logs for Install Process")
         break
       else
         sleeptime = 30
