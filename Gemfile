@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 # and are not merged and released as normal gems
 pinned_gems =  {
   'chef-provisioning-hanlon' => {github: 'hh/chef-provisioning-hanlon', ref: 'master'},
-  #'chef-provisioning-ssh' => {github: 'hh/chef-provisioning-hanlon', ref: 'master'},
+  'chef-provisioning-ssh' => {github: 'hh/chef-provisioning-hanlon', ref: 'master'},
   'hanlon-api' => {github: 'hh/hanlon-api-ruby', ref: 'master'},
   'chef' => {version: '12.16.42'},
   'chef-dk' => {version: '1.0.3'}
@@ -30,4 +30,3 @@ gem 'pry-byebug'
 gem 'chef-zero'
 gem 'cheffish'
 gem 'chef-provisioning-fog'
-gem 'chef-provisioning-ssh'
