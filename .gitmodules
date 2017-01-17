@@ -1,6 +1,3 @@
-[submodule "site-gems/hanlon-api-ruby"]
-	path = site-gems/hanlon-api-ruby
-	url = git@gitlab.ii.org.nz:iichip/hanlon-api-ruby.git
 [submodule "site-gems/chef-provisioning-hanlon"]
 	path = site-gems/chef-provisioning-hanlon
 	url = git@gitlab.ii.org.nz:iichip/chef-provisioning-hanlon.git
