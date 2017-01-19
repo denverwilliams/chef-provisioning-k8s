@@ -2,7 +2,7 @@ require 'chef/provisioning'
 require 'chef/provisioning/hanlon_driver/hanlon_driver'
 require 'chef/provisioning/ssh_driver'
 #require 'pry-byebug' ; binding.pry
-with_driver 'hanlon:192.168.1.128:8026/hanlon/api/v1'
+with_driver 'hanlon:127.0.0.1:8026/hanlon/api/v1'
 Hanlon::Api.configure do |c|
   c.api_url = run_context.chef_provisioning.current_driver.sub(
     'hanlon:','http://')
