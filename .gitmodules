@@ -1,0 +1,9 @@
+[submodule "site-gems/chef-provisioning-hanlon"]
+	path = site-gems/chef-provisioning-hanlon
+	url = git@gitlab.ii.org.nz:iichip/chef-provisioning-hanlon.git
+[submodule "site-gems/chef-provisioning-ssh"]
+	path = site-gems/chef-provisioning-ssh
+	url = git@gitlab.ii.org.nz:iichip/chef-provisioning-ssh.git
+[submodule "site-gems/hanlon-api"]
+	path = site-gems/hanlon-api
+	url = git@gitlab.ii.org.nz:iichip/hanlon-api.git
