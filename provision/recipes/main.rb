@@ -1,4 +1,4 @@
-include_recipe "provision::power_on"
+#include_recipe "provision::power_on"
 include_recipe "provision::node_setup"
 include_recipe "provision::node_state"
 include_recipe "provision::certs"
