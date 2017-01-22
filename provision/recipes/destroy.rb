@@ -117,7 +117,7 @@ ruby_block "Remove all Nodes" do
   end
 end
 
-include_recipe 'provision::power_off'
+#include_recipe 'provision::power_off'
 
 # FIXME
 # hanlon_policy "ii-master-#{master['serialnumber']}" do
